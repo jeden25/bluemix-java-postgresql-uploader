@@ -1,9 +1,4 @@
 ---
-declared-services:
-  myService:
-    type: elephantsql
-    plan: turtle
-
 applications:
 - name: JavaUpload
   memory: 256M #The maximum memory to allocate to each application instance
@@ -11,5 +6,5 @@ applications:
   host: JavaUpload-${random-word} #Hostname for app routing. Unique to domain
   path: ElephantSQL-Uploader.war
   services:
-    - myService    #Identifier for ElephantSQL service, must be provisioned before push
+    - java-pg    #Identifier for ElephantSQL service, must be provisioned before push
 
